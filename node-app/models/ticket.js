@@ -8,11 +8,15 @@ const TicketSchema = new Schema({
     },
     content: {
         type: String,
-        required: true
+        required: false
     },
-    contact: {
+    subject: {
         type: String,
         required: true
+    },
+    createdby: {
+        type: Number,
+        required: false
     },
 });
 
