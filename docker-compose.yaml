@@ -13,6 +13,8 @@ services:
       - appnet
     links:
       - mongo:mongo
+    environment: 
+      - HUBSPOT_APIKEY=76c48766-f665-4a7a-82ba-***
 
   mongo:
     image: mongo

@@ -20,6 +20,13 @@ Our clients would like to sync these data from hubspot
   
 You are free to choose your own programming language and database.
 
+## How to run
+Change the API key in the docker-compose.yaml file
+```
+docker-compose up
+```
+
+
 ## Comments on solution from author
 ### Codebase
 - the codebase could be splitted further into smaller parts based on the domain (ticket/contact) and the layer(service/database)
