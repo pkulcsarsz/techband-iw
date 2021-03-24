@@ -1,6 +1,7 @@
 # Techband interview solution
 
 Author: Peter Kulcsár Szabó
+
 Date: 2020-03-24
 
 ## Task
