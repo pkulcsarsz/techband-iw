@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  techband-node-app:
+    build: ./node-app
+    ports:
+      - 3031:3031
+    depends_on:
+    - "mongo"
+    volumes:
+      - ./node-app/:/usr/src/app
+      - /app/node_modules
+    networks: 
+      - appnet
+    links:
+      - mongo:mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - dbdata:/data/db
+    networks: 
+      - appnet
+
+networks:
+  appnet:
+    driver: "bridge"
+
+volumes:
+  dbdata:
+    driver: "local"
