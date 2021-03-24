@@ -1,6 +1,7 @@
 # Techband interview solution
 
 Author: Peter Kulcsár Szabó
+Date: 2020-03-24
 
 ## Task
 There is a high demand from our clients for Hubspot integration with our system. Your task is
@@ -18,9 +19,11 @@ Our clients would like to sync these data from hubspot
   
 You are free to choose your own programming language and database.
 
-## Comments
-### Codebase
-- I have used EventEmmiter, in real world application i would recommend to use a MQ like Kafka, RabbitMQ or AWS SQS
+## Comments on solution from author
+### Codebase
+- the codebase could be splitted further into smaller parts based on the domain (ticket/contact) and the layer(service/database)
+- i have used EventEmmiter, in real world application i would recommend to use a MQ like Kafka, RabbitMQ or AWS SQS
+- the eventemitter (MQ) helps to decouple the fetching changes and writing to database processes 
 - models folder contains schemas for mongodb
 - services/synchronizer contains functions for synchronization of tickets and contacts
 - services/requester contains a wrapper on https.request function to enable call it with await keyword (using built in https module over third party is on purpose)
